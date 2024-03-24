@@ -2,9 +2,9 @@ from functools import wraps
 import time
 
 def timer(func):
-    @wraps(func)                             # damit beim returnieren der ganzen methode die magic variablen erhalten bleiden oder so
-    def wrapped_timer(*args, **kwargs): #(kw)args kommen von der func ind den Parametern der wrapper function
-                                             # args für listenartige Param. und kwargs für benannte Param. (= z.B. dicts)
+    @wraps(func)                             
+    def wrapped_timer(*args, **kwargs): 
+                                            
         start_t = time.perf_counter()
         result = func(*args, **kwargs)
         end_t = time.perf_counter()
